@@ -18,7 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^trainer/', include('trainer.urls'), name='trainer'),
+    url(r'^trainer/', include('trainer.urls', namespace='trainer')),
 
     # third party app urls
     url(r'^accounts/', include('allauth.urls')),
