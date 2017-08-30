@@ -1,0 +1,9 @@
+<h2>Register to continue as a trainer</h2>
+
+<form action="" method="POST">{% csrf_token %}
+	<p>{{ form.name }}</p>
+	<p>{{ form.email }}</p>
+	<p>{{ form.password1 }}</p>
+	<p>{{ form.password2 }}</p>
+	<button class="" type="submit">Register</button>
+</form>
