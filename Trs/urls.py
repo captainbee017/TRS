@@ -19,4 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^trainer/', include('trainer.urls')),
+
+    # third party app urls
+    url(r'^accounts/', include('allauth.urls')),
 ]
