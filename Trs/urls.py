@@ -15,11 +15,23 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from common.views import LandingPageView, SelectLoginView
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+	url(r'^$', LandingPageView.as_view(), name='landing_page'),
+
+	url(r'^select-login/$', SelectLoginView.as_view(), name='select_login'),
+
     url(r'^trainer/', include('trainer.urls', namespace='trainer')),
+
+    url(r'^admin/', admin.site.urls),
 
     # third party app urls
     url(r'^accounts/', include('allauth.urls')),
+]
+
+
+urlpatterns += [
+    url(r'^api/v1/',
+        include('api.v1.urls', namespace='api_v1')),
 ]

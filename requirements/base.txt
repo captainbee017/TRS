@@ -1,3 +1,5 @@
 django
 django-allauth
 psycopg2
+djangorestframework
+django-filter

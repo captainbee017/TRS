@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from allauth.account.views import SignupView
+from allauth.account.views import SignupView, LoginView
 from trainer.forms import TrainerRegisterForm
 from django.views.generic import TemplateView
 
@@ -11,6 +11,10 @@ class TrainerRegisterView(SignupView):
 
 	def get_form_class(self):
 		return TrainerRegisterForm
+
+
+class TrainerLoginView(LoginView):
+	template_name = 'trainer_login.html'
 
 
 class TrainerDashboardView(TemplateView):
